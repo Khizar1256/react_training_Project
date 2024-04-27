@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import TodoList from './components/todoList/todoList';
 
 function App() {
   const [name, setname] = useState('')
@@ -36,13 +37,9 @@ function App() {
           onChange={handleChange}
           placeholder="Enter name"
         />
-        <button onClick={handleSubmit}>Submit</button>
+        <button className='bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded' onClick={handleSubmit}>Add</button>
       {/* </form> */}
-      <ul>
-      {nameList.map((str, index) => (
-          <li key={index}>{str}<button onClick={() => handleDelete(index)}>Delete</button></li>
-        ))}
-      </ul>
+      <TodoList nameList={nameList} handleDeleteFunc={handleDelete}/>
     </div>
     </>
   )
