@@ -1,20 +1,18 @@
-import { Link } from "react-router-dom";
-
+import { Outlet } from "react-router-dom";
+// import PostsLists from "../../PostsData.json";
+export interface User {
+    "id": number,
+    "title": string,
+    "content": string,
+    "authorName": string
+}
 function Home() {
-
-
+    // const data = JSON.parse(localStorage.getItem('posts') || JSON.stringify(PostsLists))
     return (
         <>
-        <nav className="bg-gray-800 p-4">
-            <div className="max-w-7xl mx-auto flex justify-between items-center">
-                <ul className="flex space-x-4">
-                    <li>
-                        <Link to="/about" className="text-white hover:text-gray-300">About</Link>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <p>This is the welcome page.</p>
+            <Outlet />
+
+            {/* <p>This is the welcome page.</p> */}
         </>
     );
 }

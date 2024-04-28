@@ -10,7 +10,7 @@ function NavBar() {
                         <Link to="/" className="text-white hover:text-gray-300">Home</Link>
                     </li>
                     <li className="mr-4">
-                        <Link to="/about" className="text-white hover:text-gray-300">About</Link>
+                        <Link to="/New-Post" className="text-white hover:text-gray-300">Add New Post</Link>
                     </li>
                 </ul>
             </div>

@@ -1,19 +1,20 @@
 import './App.css'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from './components/pages/Home';
-import About from './components/pages/About';
-import NotFound from './components/pages/NotFound';
+import { BrowserRouter } from "react-router-dom";
+import PostsLists from '../src/PostsData.json';
+import { useEffect } from 'react';
+import NavBar from './components/molecule/Navbar';
+import Routing from './routing/Routing';
 // import NavBar from './components/molecule/Navbar';
 
 function App() {
+  useEffect(() => {
+      localStorage.setItem('posts', JSON.stringify(PostsLists))
+  },[])
   return (
     <>
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/about' element={<About/>}></Route>
-        <Route path='*' element={<NotFound/>}></Route>
-      </Routes>
+      <NavBar/>
+      <Routing/>
       </BrowserRouter>
     </>
   )
